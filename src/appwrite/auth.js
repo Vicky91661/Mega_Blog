@@ -6,8 +6,8 @@ export class AuthService {
     account;
 
     constructor(){
-        client.setEndpoint(conf.appwriteUrl).setProject(conf.appwriteProjectId);
-        this.account = new Account(client);
+        this.client.setEndpoint(conf.appwriteUrl).setProject(conf.appwriteProjectId);
+        this.account = new Account(this.client);
     }
 
     async createAccount({name,email,password}){
